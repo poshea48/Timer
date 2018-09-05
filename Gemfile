@@ -1,0 +1,10 @@
+source 'https://rubygems.org'
+
+gem 'bcrypt'
+gem 'erubis'
+gem 'pg'
+gem 'pry'
+gem 'rubocop'
+gem 'sinatra'
+gem 'sinatra-contrib'
+gem 'pry'

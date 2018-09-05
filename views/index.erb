@@ -1,0 +1,31 @@
+<div class="controls">
+  <form  action="/start_time" method="post">
+      <button id="start" class="start_time" >Start</button>
+  </form>
+  <form action="/stop_time" method="post">
+      <button id="stop" class="stop_time" disabled>Stop</button>
+  </form>
+  <form  action="/log_day" method="post">
+      <button id="log" class="log_day" disabled>Log Day</button>
+  </form>
+  <form  action="/reset" method="post">
+      <button id="reset" class="reset" disabled>Reset</button>
+  </form>
+</div>
+
+<div id="history"></div>
+
+<script id="history_template" type="text/x-handlebars">
+  {{#if forceLogDay}}
+    <p>Hours worked today => N/A</p>
+    <p>Hours worked yesterday => N/A</p>
+  {{else}}
+    <p>Hours worked today => {{hoursToday}}</p>
+    <p>Hours worked yesterday => {{hoursWorkedYesterday}}</p>
+  {{/if}}
+  <p>Hours worked this week => {{hoursThisWeek}}</p>
+  <p>Hours worked last week => {{hoursLastWeek}}</p>
+  <p>Hours worked this month => {{hoursThisMonth}}</p>
+  <p>Hours worked last month => {{hoursLastMonth}}</p>
+
+</script>
