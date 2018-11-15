@@ -62,6 +62,7 @@ end
 
 before do
   @log = LogDatabasePersistence.new(logger)
+  # session[:hours_today] += 0.2
   @hours_today = session[:hours_today] || 0
   @start_time = session[:start_time]
   @current_date = get_date(Time.now)
@@ -123,6 +124,7 @@ post "/stop_time" do
 end
 
 post "/log_day" do
+  # add validation to make sure day was logged
   @log.log_day(session[:hours_today], session[:today])
   session[:start_time] = nil
   session[:today] = nil
